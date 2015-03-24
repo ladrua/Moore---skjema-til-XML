@@ -1,15 +1,26 @@
-<form name="moore-sok-forbrukslan" action="">
+
+<?php
+
+    function getValue($value) {
+
+        return isset($value) ? $value : '';
+
+    }
+
+
+?>
+
+
+<form name="moore-sok-forbrukslan" action="<?php esc_url( $_SERVER['REQUEST_URI'] ) ?>" method="post">
 
     
     <fieldset>
-
         <legend>Lånebeløp</legend>
 
         <div class="row">
-
             <div class="medium-6 columns">
                 <label>Lånebeløp *
-                    <input type="text" name="moore-laanebelop" value="" required="required">                
+                    <input type="text" name="moore-laanebelop" value="<?php isset($_POST["moore-laanebelop"]) ?>" required="required">                
                 </label>
             </div>
             <div class="medium-6 columns">
