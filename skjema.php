@@ -9,7 +9,7 @@
         <div class="row">
             <div class="medium-6 columns">
                 <label>Lånebeløp *
-                    <input type="text" name="moore-laanebelop" value="<?php isset($_POST["moore-laanebelop"]) ? esc_attr($_POST["moore-laanebelop"]) : '' ?>" required="required">                
+                    <input type="text" name="moore-laanebelop" value="<?php echo isset($_POST["moore-laanebelop"]) ? esc_attr($_POST["moore-laanebelop"]) : '' ?>" required="required">                
                 </label>
             </div>
             <div class="medium-6 columns">
@@ -42,18 +42,18 @@
 
             <div class="medium-6 columns">
                 <label>Fornavn *
-                    <input type="text" name="moore-person[][fornavn]" value="213" required="required">                
+                    <input type="text" name="moore-person[][fornavn]" value="<?php echo isset($_POST["moore-person[][fornavn]"]) ? esc_attr($_POST["moore-person[][fornavn]"]) : '' ?>" required="required">                
                 </label>
                 <label>Etternavn *
-                    <input type="text" name="moore-person[][etternavn]" value="" required="required">                
+                    <input type="text" name="moore-person[][etternavn]" value="<?php echo isset($_POST["moore-person[][etternavn]"]) ? esc_attr($_POST["moore-person[][etternavn]"]) : '' ?>" required="required">                
                 </label>
                 <label>Mobilnummer *
-                    <input type="text" name="moore-person[][mobil]" value="" required="required">                
+                    <input type="text" name="moore-person[][mobil]" value="<?php echo isset($_POST["moore-person[][mobil]"]) ? esc_attr($_POST["moore-person[][mobil]"]) : '' ?>" required="required">                
                 </label>
                 <label>E-post adresse *
-                    <input type="text" name="moore-person[][epost]" value="" required="required">                
+                    <input type="text" name="moore-person[][epost]" value="<?php echo isset($_POST["moore-person[][epost]"]) ? esc_attr($_POST["moore-person[][epost]"]) : '' ?>" required="required">                
                 </label>
-                <input id="moore-norsk-statsborger" name="moore-person[][statsborger]" type="checkbox"><label for="moore-norsk-statsborger">Norsk statsborger</label>
+                <input id="moore-norsk-statsborger" name="moore-person[][statsborger]" value="<?php echo isset($_POST["moore-person[][statsborger]"]) ? esc_attr($_POST["moore-person[][statsborger]"]) : '' ?>" type="checkbox"><label for="moore-norsk-statsborger">Norsk statsborger</label>
             </div>
 
 
