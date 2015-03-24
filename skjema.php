@@ -1,6 +1,6 @@
 
 
-<form name="moore-sok-forbrukslan" action="<?php esc_url( $_SERVER['REQUEST_URI'] ) ?>" method="post">
+<form name="moore-sok-forbrukslan" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ?>" method="post">
 
     
     <fieldset>
