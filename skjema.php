@@ -1,4 +1,25 @@
+<style>
 
+    .formActions {
+      color: #222;
+      margin-right: 20px;
+    }
+    .formActions i {
+      color: #999;
+      margin-right: 10px;
+    }
+    .formActions.hidden {
+      display: none;
+    }
+
+    form .optional {
+      display: none;
+    }
+    form .optional.open {
+      display: block;
+    }
+
+</style>
 
 <form name="moore-sok-forbrukslan" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ?>" method="post">
 
@@ -208,8 +229,8 @@
             </div>
         </div>
         
-        <a id="addRow" class="formActions"><i class="icon ion-plus-circled"></i>Legg til rekke</a>
-        <a id="removeRow" class="formActions hidden"><i class="icon ion-minus-circled"></i>Fjern rekke</a>
+        <a id="addRow" class="formActions"><i class="icon ion-plus-circled"></i>Legg til lån</a>
+        <a id="removeRow" class="formActions hidden"><i class="icon ion-minus-circled"></i>Fjern lån</a>
 
     </fieldset>
 
