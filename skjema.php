@@ -217,3 +217,88 @@
     <button>Send søknad</button>
 
 </form>
+
+
+
+<script>
+
+    'use strict';
+
+    var mooreFormToXML = (function(document, $) {
+        var docElem = document.documentElement,
+            _userAgentInit = function() {
+                docElem.setAttribute('data-useragent', navigator.userAgent);
+            },
+
+            _formFunctions = function() {
+
+                
+
+                $('#addMedsoker').on('click', function(){
+
+                    var fields = $(this).next();
+                    if(fields.is(':visible')) {
+                        $(this).html('<i class="icon ion-plus-circled"></i>Legg til medsøker');
+                    } else {
+                        $(this).html('<i class="icon ion-minus-circled"></i>Fjern medsøker');
+                    }
+
+                    $(this).next().toggleClass('open');
+                });
+
+                (function(){
+
+                    var current = 0;
+                    var row = $('#gjeldsrekker').children('.row').first().clone(),
+
+                    buttonVisibility = function() {
+                        if (current > 0) {
+                            $('#removeRow').removeClass('hidden');
+                        } else {
+                            $('#removeRow').addClass('hidden');
+                        }
+                    };
+
+                    $('#addRow').on('click', function(){
+                        current++;
+                        row.clone().insertBefore(this);
+                        buttonVisibility();
+                    });
+
+                    $('#removeRow').on('click', function() {
+                        current--;
+                        $('#gjeldsrekker').children('.row').last().remove();
+                        buttonVisibility();
+
+                    });
+
+                    
+
+                })();
+
+                
+
+            },
+
+            _init = function() {
+                _userAgentInit();
+                _formFunctions();
+            };
+
+
+        return {
+            init: _init
+        };
+
+
+    })(document, jQuery);
+
+
+
+    (function() {
+        mooreFormToXML.init();
+    })();
+
+
+</script>
+
