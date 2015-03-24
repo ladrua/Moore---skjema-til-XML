@@ -1,15 +1,4 @@
 
-<?php
-
-    function getValue($value) {
-
-        return isset($value) ? $value : '';
-
-    }
-
-
-?>
-
 
 <form name="moore-sok-forbrukslan" action="<?php esc_url( $_SERVER['REQUEST_URI'] ) ?>" method="post">
 
@@ -20,7 +9,7 @@
         <div class="row">
             <div class="medium-6 columns">
                 <label>Lånebeløp *
-                    <input type="text" name="moore-laanebelop" value="<?php isset($_POST["moore-laanebelop"]) ?>" required="required">                
+                    <input type="text" name="moore-laanebelop" value="<?php isset($_POST["moore-laanebelop"]) ? esc_attr($_POST["moore-laanebelop"]) : '' ?>" required="required">                
                 </label>
             </div>
             <div class="medium-6 columns">
@@ -53,7 +42,7 @@
 
             <div class="medium-6 columns">
                 <label>Fornavn *
-                    <input type="text" name="moore-person[][fornavn]" value="" required="required">                
+                    <input type="text" name="moore-person[][fornavn]" value="213" required="required">                
                 </label>
                 <label>Etternavn *
                     <input type="text" name="moore-person[][etternavn]" value="" required="required">                
